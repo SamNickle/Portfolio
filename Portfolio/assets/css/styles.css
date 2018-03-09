@@ -1,0 +1,140 @@
+﻿/* Text Colours */
+/* Background Colours */
+/* Padding */
+/* Heights/Widths */
+/* Fonts */
+/***********************
+    Global
+***********************/
+.Container {
+  max-width: 100vw;
+  margin: 0 auto;
+  font: "Raleway", sans-serif;
+  color: #999; }
+  .Container .Panel {
+    text-align: center;
+    max-width: 1170px;
+    margin: 0 auto; }
+  .Container.White {
+    background-color: #fff; }
+  .Container.Grey {
+    background-color: #E5EAEE; }
+  .Container h3 {
+    color: #ca9061;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 30px 0; }
+  .Container a {
+    color: #ca9061;
+    font-weight: 700;
+    text-decoration: none; }
+    .Container a:hover {
+      text-decoration: underline; }
+
+.CenterBlock {
+  margin: 0 auto;
+  clear: both; }
+
+/***********************
+    About Me
+***********************/
+.AboutMe .InterestsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .AboutMe .InterestsContainer .Interest {
+    padding: 0 30px; }
+  .AboutMe .InterestsContainer .Me {
+    padding: 0;
+    margin: 0 30px;
+    height: 200px;
+    width: 200px;
+    border: 3px solid #ca9061;
+    border-radius: 50%; }
+
+.AboutMe .DescriptionContainer {
+  width: 70%;
+  font-size: 20px;
+  padding: 30px 0; }
+
+.AboutMe .SkillSetContainer {
+  width: 70%;
+  padding: 30px 0;
+  overflow: hidden; }
+  .AboutMe .SkillSetContainer .SkillUnit {
+    width: 50%;
+    float: left; }
+    .AboutMe .SkillSetContainer .SkillUnit .SkillLabel {
+      text-align: center;
+      margin: 0 auto; }
+    .AboutMe .SkillSetContainer .SkillUnit .SkillIcon {
+      margin: 0 0 30px; }
+      .AboutMe .SkillSetContainer .SkillUnit .SkillIcon .SkillIconSpan {
+        display: inline-block;
+        height: 14px;
+        width: 14px;
+        margin-right: 5px;
+        border-radius: 50%; }
+        .AboutMe .SkillSetContainer .SkillUnit .SkillIcon .SkillIconSpan.Gold {
+          background-color: #ca9061; }
+        .AboutMe .SkillSetContainer .SkillUnit .SkillIcon .SkillIconSpan.Grey {
+          background-color: #999; }
+        .AboutMe .SkillSetContainer .SkillUnit .SkillIcon .SkillIconSpan:after {
+          content: '';
+          display: block;
+          width: 10px;
+          height: 10px;
+          background-color: #fff;
+          border-radius: 50%;
+          margin: 2px; }
+
+.Work .WorkContainer {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 0 30px 0;
+  display: inline-block;
+  overflow: hidden;
+  font-weight: 300;
+  font-size: 24px;
+  color: #fff;
+  -webkit-transition: background-color 500ms linear;
+  -moz-transition: background-color 500ms linear;
+  -o-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear; }
+  .Work .WorkContainer .WorkImg {
+    width: 25%;
+    float: left; }
+    .Work .WorkContainer .WorkImg:hover .ImgOverlay {
+      background-color: #ca9061;
+      background-color: rgba(202, 144, 97, 0.6);
+      display: inline-block;
+      margin-top: 0px; }
+    .Work .WorkContainer .WorkImg:hover .ImgOverlay .WorkDesc {
+      opacity: 1; }
+    .Work .WorkContainer .WorkImg .ImgOverlay {
+      height: 100%;
+      width: 100%;
+      line-height: 150px;
+      -webkit-transition: background-color 500ms linear;
+      -moz-transition: background-color 500ms linear;
+      -o-transition: background-color 500ms linear;
+      -ms-transition: background-color 500ms linear;
+      transition: background-color 500ms linear; }
+      .Work .WorkContainer .WorkImg .ImgOverlay .WorkDesc {
+        opacity: 0;
+        margin: 0;
+        text-transform: uppercase;
+        -webkit-transition: background-color 500ms linear;
+        -moz-transition: background-color 500ms linear;
+        -o-transition: background-color 500ms linear;
+        -ms-transition: background-color 500ms linear;
+        transition: background-color 500ms linear; }
+
+.Clients {
+  margin: 0 auto; }
+  .Clients .ClientCarousel {
+    margin: 0 auto;
+    text-align: center; }
+
