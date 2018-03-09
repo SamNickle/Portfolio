@@ -1,9 +1,78 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-    ViewData["Description"] = "The home page of my website";
-}
+﻿@model Playground.Models.HomeVM
 
-<p>This is the index.cshtml</p>
+<div class="Container White">
+    <div class="AboutMe Panel" id="AboutMe">
+        <h3>About Me</h3>
+        <div class="InterestsContainer CenterBlock">
+            <img class="Interest" src="~/Images/AboutMe/BikeIcon.png" alt="Motorcycle" />
+            <img class="Interest" src="~/Images/AboutMe/RugbyIcon.png" alt="Rugby" />
+
+            <img class="Me" src="~/Images/AboutMe/Me.jpg" alt="Me" />
+
+            <img class="Interest" src="~/Images/AboutMe/GymIcon.png" alt="Gym" />
+            <img class="Interest" src="~/Images/AboutMe/CodingIcon.png" alt="Coding" />
+        </div>
+
+        <div class="DescriptionContainer CenterBlock">
+            <p>
+                <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b> In lobortis sodales velit id commodo. Quisque in accumsan enim. In condimentum laoreet dolor ut pellentesque. In eleifend risus sit amet nisl pulvinar, vitae elementum ligula eleifend. Nam imperdiet magna id purus ultrices lobortis. Donec varius metus magna, eu aliquet mi suscipit in. Ut a laoreet justo, sed scelerisque dui.
+            </p>
+        </div>
+
+        <div class="SkillSetContainer CenterBlock">
+            @foreach (var item in Model?.Skills?.Take(8) ?? new List<Skill>())
+            {
+                <div class="SkillUnit">
+                    <div class="SkillLabel">@item?.Name</div>
+                    <div class="SkillIcon">
+                        @for (int i = 0; i < 10; i++)
+                        {
+                            if (item?.Ranking > i)
+                            {
+                                <div class="SkillIconSpan Gold"></div>
+                            }
+                            else
+                            {
+                                <div class="SkillIconSpan Grey"></div>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+        <a asp-action="Me" asp-controller="About" class="btn btn-primary">More ></a>
+    </div>
+</div>
+
+<div class="Container Grey">
+    <div class="Work Panel" id="Work">
+        <h3>Work</h3>
+        <div class="WorkContainer">
+            @foreach (var item in Model?.WorkExamples?.Take(8) ?? new List<Work>())
+            {
+                <div class="WorkImg" style="height:150px;background-image: url('@item.ImageUrl');">
+                    <div class="ImgOverlay">
+                        <p class="WorkDesc">@item?.Name</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="Container White">
+    <div class="Clients Panel" id="Clients">
+        <h3>Clients</h3>
+        <div class="ClientCarousel">
+            @foreach (var item in Model.Clients)
+            {
+                <div class="ClientLogoDesc"></div>
+                <div class="ClientQuote"></div>
+            }
+        </div>
+
+    </div>
+</div>
 
 @section Scripts {
     @*Insert any script tags for this page here*@

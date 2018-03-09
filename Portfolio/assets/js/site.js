@@ -1,5 +1,7 @@
 ﻿(function () {
     "use strict";
 
-    console.log("hello");
+    $('.WorkImg').hover(function () {
+        $('.ImgOverlay').fadeIn();
+    });
 })();
