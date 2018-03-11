@@ -1,4 +1,4 @@
-﻿@model Playground.Models.HomeVM
+﻿@model Portfolio.Models.HomeVM
 
 <div class="Container White">
     <div class="AboutMe Panel" id="AboutMe">
@@ -20,7 +20,7 @@
         </div>
 
         <div class="SkillSetContainer CenterBlock">
-            @foreach (var item in Model?.Skills?.Take(8) ?? new List<Skill>())
+            @foreach (var item in Model?.Skills?.Take(8))
             {
                 <div class="SkillUnit">
                     <div class="SkillLabel">@item?.Name</div>
@@ -48,7 +48,7 @@
     <div class="Work Panel" id="Work">
         <h3>Work</h3>
         <div class="WorkContainer">
-            @foreach (var item in Model?.WorkExamples?.Take(8) ?? new List<Work>())
+            @foreach (var item in Model?.WorkExamples?.Take(8))
             {
                 <div class="WorkImg" style="height:150px;background-image: url('@item.ImageUrl');">
                     <div class="ImgOverlay">
@@ -64,13 +64,71 @@
     <div class="Clients Panel" id="Clients">
         <h3>Clients</h3>
         <div class="ClientCarousel">
-            @foreach (var item in Model.Clients)
+            @foreach (var item in Model?.Clients?.Take(2))
             {
-                <div class="ClientLogoDesc"></div>
-                <div class="ClientQuote"></div>
+                <div class="SingleClient">
+                    <div class="ClientLogoDesc">
+                        <img src="@item?.LogoUrl" alt="@item?.Name" />
+                        <p><b>@item?.ClientName</b></p>
+                        <p><i>@item?.Name</i></p>
+                    </div>
+                    <div class="ClientQuote">
+                        <p>@item?.Quote</p>
+                    </div>
+                </div>
             }
         </div>
 
+        <div class="ClientLogoContainer">
+            @foreach (var item in Model?.Clients?.Take(2))
+            {
+                <div class="ClientLogo" style="background-image: url('@item.LogoUrl')"></div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="Container Grey">
+    <div class="Contact Panel">
+        <h3>Contact</h3>
+        <div class="SocialMediaContainer">
+            @foreach (var item in Model?.SocialMedias?.Take(4))
+            {
+                <div class="IconWrapper" onclick="window.open('@item.Url', '_blank')">
+                    <img class="SocialIcon" alt="@item.Name" src="@item.ImageUrl" />
+                </div>
+            }
+        </div>
+        <hr class="Bar" />
+        <a href="mailto:sam_nich@live.com" class="Email">Email Me</a>
+    </div>
+</div>
+
+<div class="Container White">
+    <div class="Form Panel">
+        <h3>Lets Work Together</h3>
+        <div class="FormContainer">
+            <form asp-action="EnquiryForm" asp-controller="Contact">
+                <div class="Details">
+                    <div class="FormCol">
+                        <label>Your Name</label>
+                        <input class="ContactName" required type="text" name="name">
+                    </div>
+
+                    <div class="FormCol">
+                        <label>Your Email</label>
+                        <input class="ContactEmail" required type="email" name="_replyto">
+                    </div>
+                </div>
+
+                <label>Tell me about your project</label>
+                <textarea class="TextArea" required name="message"></textarea>
+
+                <div class="ContactSubmit">
+                    <input type="submit" value="Send">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
