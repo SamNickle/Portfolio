@@ -19,12 +19,23 @@ html, body {
         z-index: 999;
     }
 
-        .Header .TopBar #Logo {
-            height: 50px;
-            width: 50px;
-            opacity: 0.5;
+        .Header .TopBar a {
             z-index: 999;
         }
+
+        .Header .TopBar a {
+            height: 50px;
+            width: 50px;
+        }
+
+            .Header .TopBar a #Logo {
+                height: 50px;
+                width: 50px;
+                opacity: 0.5;
+                z-index: 999;
+                background: url('/Images/Header/Logo.svg') center center;
+                background-size: cover;
+            }
 
         .Header .TopBar nav {
             z-index: 999;

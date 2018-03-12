@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Home\About.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
   </ItemGroup>
 

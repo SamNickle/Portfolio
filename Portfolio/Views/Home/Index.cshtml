@@ -4,13 +4,20 @@
     <div class="AboutMe Panel" id="AboutMe">
         <h3>About Me</h3>
         <div class="InterestsContainer CenterBlock">
-            <img class="Interest" src="~/Images/AboutMe/BikeIcon.png" alt="Motorcycle" />
-            <img class="Interest" src="~/Images/AboutMe/RugbyIcon.png" alt="Rugby" />
 
-            <img class="Me" src="~/Images/AboutMe/Me.jpg" alt="Me" />
+            <div class="InterestIconContainer">
+                <img class="Interest" src="~/Images/AboutMe/BikeIcon.png" alt="Motorcycle" />
+                <img class="Interest" src="~/Images/AboutMe/RugbyIcon.png" alt="Rugby" />
+            </div>
 
-            <img class="Interest" src="~/Images/AboutMe/GymIcon.png" alt="Gym" />
-            <img class="Interest" src="~/Images/AboutMe/CodingIcon.png" alt="Coding" />
+            <div class="MeContainer">
+                <img class="Me" src="~/Images/AboutMe/Me.jpg" alt="Me" />
+            </div>
+
+            <div class="InterestIconContainer">
+                <img class="Interest" src="~/Images/AboutMe/GymIcon.png" alt="Gym" />
+                <img class="Interest" src="~/Images/AboutMe/CodingIcon.png" alt="Coding" />
+            </div>
         </div>
 
         <div class="DescriptionContainer CenterBlock">
@@ -40,7 +47,7 @@
                 </div>
             }
         </div>
-        <a asp-action="Me" asp-controller="About" class="btn btn-primary">More ></a>
+        <a asp-action="Me" asp-controller="About">More ></a>
     </div>
 </div>
 
@@ -50,13 +57,14 @@
         <div class="WorkContainer">
             @foreach (var item in Model?.WorkExamples?.Take(8))
             {
-                <div class="WorkImg" style="height:150px;background-image: url('@item.ImageUrl');">
+                <div class="WorkImg" style="background-image: url('@item.ImageUrl');">
                     <div class="ImgOverlay">
                         <p class="WorkDesc">@item?.Name</p>
                     </div>
                 </div>
             }
         </div>
+        <a asp-action="Work" asp-controller="About">More ></a>
     </div>
 </div>
 
@@ -89,7 +97,7 @@
 </div>
 
 <div class="Container Grey">
-    <div class="Contact Panel">
+    <div class="Contact Panel" id="Contact">
         <h3>Contact</h3>
         <div class="SocialMediaContainer">
             @foreach (var item in Model?.SocialMedias?.Take(4))
@@ -109,16 +117,4 @@
 </div>
 
 @section Scripts {
-    <script>
-        $("#SendEmail").click(function () {
-            $.ajax({
-                url: "Contact/SendEmail",
-                type: "post",
-                data: $("#EmailForm").serialize(),
-                success: function (result) {
-                    $("#EmailFormPartial").html(result);
-                }
-            });
-        }
-    </script>
 }

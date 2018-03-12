@@ -90,6 +90,7 @@ table {
         text-align: center;
         max-width: $Width-Max;
         margin: 0 auto;
+        padding: 0 0 $Padding-Standard 0;
     }
 
     h3 {
@@ -206,29 +207,10 @@ footer {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /***********************
     About Me
 ***********************/
 .AboutMe {
-    padding: 0 0 $Padding-Standard 0;
-
     .InterestsContainer {
         display: flex;
         justify-content: center;
@@ -258,10 +240,13 @@ footer {
         width: 70%;
         padding: $Padding-Standard 0;
         overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        flex-wrap: wrap;
 
         .SkillUnit {
             width: 50%;
-            float: left;
 
             .SkillLabel {
                 text-align: center;
@@ -311,6 +296,8 @@ footer {
         font-weight: 300;
         font-size: 24px;
         color: #fff;
+        display: flex;
+        flex-wrap: wrap;
         -webkit-transition: background-color 500ms linear;
         -moz-transition: background-color 500ms linear;
         -o-transition: background-color 500ms linear;
@@ -320,6 +307,7 @@ footer {
         .WorkImg {
             width: 25%;
             float: left;
+            height: 150px;
 
             &:hover {
                 .ImgOverlay {
@@ -584,12 +572,176 @@ footer {
 
 // Large devices (desktops, 992px and up)
 @media (max-width: 992px) {
+    .Header {
+        height: 55vw;
+
+        .NameContainer {
+            height: 55vw;
+
+            .NameWrapper {
+                .Name {
+                    font-size: 8vw;
+                    margin: 6vw;
+
+                    h1 {
+                        border: #fff solid 1vw;
+                    }
+                }
+
+                .SubHeader {
+                    font-size: 2vw;
+                }
+            }
+        }
+
+        .TopBar {
+            nav {
+                a {
+                    font-size: 2.5vw;
+                    margin: 0 0 0 2vw;
+                }
+            }
+
+            a {
+                #Logo {
+                    height: 10vw;
+                    width: 10vw;
+                }
+            }
+        }
+    }
+
+    .AboutMe {
+        .InterestsContainer {
+            > div {
+            }
+
+            .InterestIconContainer {
+                .Interest {
+                    padding: 15px 30px;
+                }
+            }
+
+            .MeContainer {
+                .Me {
+                }
+            }
+        }
+    }
+
+    .Contact {
+        .Email {
+            font-size: 14vw;
+        }
+    }
 }
 
 // Medium devices (tablets, 768px and up)
-@media (max-min-width: 768px) {
-}
+@media (max-width: 768px) {
+    .AboutMe {
+        .InterestsContainer {
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            flex-wrap: wrap;
 
+            > div {
+                width: 75%;
+            }
+
+            .InterestIconContainer {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+
+                .Interest {
+                    padding: 30px;
+                }
+            }
+
+            .MeContainer {
+                .Me {
+                }
+            }
+        }
+    }
+
+    .Clients {
+        .ClientCarousel {
+
+            .SingleClient {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .Form {
+        .FormContainer {
+            form {
+                max-width: 75%;
+            }
+        }
+    }
+
+    footer {
+        .LinkContainer {
+            margin: 0 auto;
+            flex-direction: column;
+
+            .FooterText {
+                text-align: center;
+
+                .FootLinksContainer {
+                    margin: 25px 0 0 0;
+                }
+            }
+        }
+    }
+}
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
+    .AboutMe {
+        .SkillSetContainer {
+            width: 70%;
+            padding: $Padding-Standard 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            flex-wrap: wrap;
+
+            .SkillUnit {
+                flex-direction: column;
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+    }
+
+    .Clients {
+        .ClientLogoContainer {
+            flex-direction: column;
+        }
+    }
+
+    .Work {
+        .WorkContainer {
+            .WorkImg {
+                width: 50%;
+                height: 150px;
+            }
+        }
+    }
+
+    footer {
+        .LinkContainer {
+
+            .FooterText {
+
+                .FootLinksContainer {
+                    display: none;
+                }
+            }
+        }
+    }
 }

@@ -59,7 +59,8 @@ table {
   .Container .Panel {
     text-align: center;
     max-width: 1170px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding: 0 0 30px 0; }
   .Container h3 {
     color: #ca9061;
     text-transform: uppercase;
@@ -143,55 +144,58 @@ footer {
 /***********************
     About Me
 ***********************/
-.AboutMe {
-  padding: 0 0 30px 0; }
-  .AboutMe .InterestsContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    .AboutMe .InterestsContainer .Interest {
-      padding: 0 30px; }
-    .AboutMe .InterestsContainer .Me {
-      padding: 0;
-      margin: 0 30px;
-      height: 200px;
-      width: 200px;
-      border: 3px solid #ca9061;
-      border-radius: 50%; }
-  .AboutMe .DescriptionContainer {
-    width: 70%;
-    font-size: 20px;
-    padding: 30px 0; }
-  .AboutMe .SkillSetContainer {
-    width: 70%;
-    padding: 30px 0;
-    overflow: hidden; }
-    .AboutMe .SkillSetContainer .SkillUnit {
-      width: 50%;
-      float: left; }
-      .AboutMe .SkillSetContainer .SkillUnit .SkillLabel {
-        text-align: center;
-        margin: 0 auto; }
-      .AboutMe .SkillSetContainer .SkillUnit .SkillIcon {
-        margin: 0 0 30px; }
-        .AboutMe .SkillSetContainer .SkillUnit .SkillIcon .SkillIconSpan {
-          display: inline-block;
-          height: 14px;
-          width: 14px;
-          margin-right: 5px;
-          border-radius: 50%; }
-          .AboutMe .SkillSetContainer .SkillUnit .SkillIcon .SkillIconSpan.Gold {
-            background-color: #ca9061; }
-          .AboutMe .SkillSetContainer .SkillUnit .SkillIcon .SkillIconSpan.Grey {
-            background-color: #999; }
-          .AboutMe .SkillSetContainer .SkillUnit .SkillIcon .SkillIconSpan:after {
-            content: '';
-            display: block;
-            width: 10px;
-            height: 10px;
-            background-color: #fff;
-            border-radius: 50%;
-            margin: 2px; }
+.AboutMe .InterestsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .AboutMe .InterestsContainer .Interest {
+    padding: 0 30px; }
+  .AboutMe .InterestsContainer .Me {
+    padding: 0;
+    margin: 0 30px;
+    height: 200px;
+    width: 200px;
+    border: 3px solid #ca9061;
+    border-radius: 50%; }
+
+.AboutMe .DescriptionContainer {
+  width: 70%;
+  font-size: 20px;
+  padding: 30px 0; }
+
+.AboutMe .SkillSetContainer {
+  width: 70%;
+  padding: 30px 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap; }
+  .AboutMe .SkillSetContainer .SkillUnit {
+    width: 50%; }
+    .AboutMe .SkillSetContainer .SkillUnit .SkillLabel {
+      text-align: center;
+      margin: 0 auto; }
+    .AboutMe .SkillSetContainer .SkillUnit .SkillIcon {
+      margin: 0 0 30px; }
+      .AboutMe .SkillSetContainer .SkillUnit .SkillIcon .SkillIconSpan {
+        display: inline-block;
+        height: 14px;
+        width: 14px;
+        margin-right: 5px;
+        border-radius: 50%; }
+        .AboutMe .SkillSetContainer .SkillUnit .SkillIcon .SkillIconSpan.Gold {
+          background-color: #ca9061; }
+        .AboutMe .SkillSetContainer .SkillUnit .SkillIcon .SkillIconSpan.Grey {
+          background-color: #999; }
+        .AboutMe .SkillSetContainer .SkillUnit .SkillIcon .SkillIconSpan:after {
+          content: '';
+          display: block;
+          width: 10px;
+          height: 10px;
+          background-color: #fff;
+          border-radius: 50%;
+          margin: 2px; }
 
 .Work .WorkContainer {
   max-width: 1170px;
@@ -202,6 +206,8 @@ footer {
   font-weight: 300;
   font-size: 24px;
   color: #fff;
+  display: flex;
+  flex-wrap: wrap;
   -webkit-transition: background-color 500ms linear;
   -moz-transition: background-color 500ms linear;
   -o-transition: background-color 500ms linear;
@@ -209,7 +215,8 @@ footer {
   transition: background-color 500ms linear; }
   .Work .WorkContainer .WorkImg {
     width: 25%;
-    float: left; }
+    float: left;
+    height: 150px; }
     .Work .WorkContainer .WorkImg:hover .ImgOverlay {
       background-color: #ca9061;
       background-color: rgba(202, 144, 97, 0.6);
@@ -399,4 +406,74 @@ footer {
 
 .Form .FormContainer .SuccessContainer {
   text-align: center; }
+
+@media (max-width: 992px) {
+  .Header {
+    height: 55vw; }
+    .Header .NameContainer {
+      height: 55vw; }
+      .Header .NameContainer .NameWrapper .Name {
+        font-size: 8vw;
+        margin: 6vw; }
+        .Header .NameContainer .NameWrapper .Name h1 {
+          border: #fff solid 1vw; }
+      .Header .NameContainer .NameWrapper .SubHeader {
+        font-size: 2vw; }
+    .Header .TopBar nav a {
+      font-size: 2.5vw;
+      margin: 0 0 0 2vw; }
+    .Header .TopBar a #Logo {
+      height: 10vw;
+      width: 10vw; }
+  .AboutMe .InterestsContainer .InterestIconContainer .Interest {
+    padding: 15px 30px; }
+  .Contact .Email {
+    font-size: 14vw; } }
+
+@media (max-width: 768px) {
+  .AboutMe .InterestsContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap; }
+    .AboutMe .InterestsContainer > div {
+      width: 75%; }
+    .AboutMe .InterestsContainer .InterestIconContainer {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; }
+      .AboutMe .InterestsContainer .InterestIconContainer .Interest {
+        padding: 30px; }
+  .Clients .ClientCarousel .SingleClient {
+    flex-direction: column; }
+  .Form .FormContainer form {
+    max-width: 75%; }
+  footer .LinkContainer {
+    margin: 0 auto;
+    flex-direction: column; }
+    footer .LinkContainer .FooterText {
+      text-align: center; }
+      footer .LinkContainer .FooterText .FootLinksContainer {
+        margin: 25px 0 0 0; } }
+
+@media (max-width: 576px) {
+  .AboutMe .SkillSetContainer {
+    width: 70%;
+    padding: 30px 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap; }
+    .AboutMe .SkillSetContainer .SkillUnit {
+      flex-direction: column;
+      margin: 0 auto;
+      width: 100%; }
+  .Clients .ClientLogoContainer {
+    flex-direction: column; }
+  .Work .WorkContainer .WorkImg {
+    width: 50%;
+    height: 150px; }
+  footer .LinkContainer .FooterText .FootLinksContainer {
+    display: none; } }
 
