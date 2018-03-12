@@ -7,6 +7,7 @@
     <meta name="description" content="@ViewData["Description"]" />
     <style>@Html.Raw(System.IO.File.ReadAllText("wwwroot/css/abovethefold.css"))</style>
     <link rel="shortcut icon" href="~/favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300,400,700" rel="stylesheet">
 </head>
 <body>
     <div class="Header">
@@ -14,9 +15,9 @@
             <img id="Logo" src="~/Images/Header/Logo.svg" alt="Logo" />
             <nav>
                 <a href="#AboutMe">About Me</a>
-                <a href="#">Work</a>
-                <a href="#">Clients</a>
-                <a href="#">Contacts</a>
+                <a href="#Work">Work</a>
+                <a href="#Clients">Clients</a>
+                <a href="#Contacts">Contacts</a>
             </nav>
         </div>
         <div class="NameContainer">
@@ -37,7 +38,26 @@
 
     @RenderBody()
 
-    <footer></footer>
+    <footer>
+        <div class="LinkContainer">
+            <div class="FooterLogoContainer">
+                <a href="#Header">
+                    <img src="~/Images/Header/Logo.svg" alt="Logo" class="FooterLogo" />
+                </a>
+            </div>
+            <div class="FooterText">
+                <div class="FootLinksContainer">
+                    <a href="#AboutMe">About Me</a>
+                    <a href="#Work">Work</a>
+                    <a href="#Clients">Clients</a>
+                    <a href="#Contact">Contact</a>
+                </div>
+                <div class="CopyrightContainer">
+                    <p class="CopyRight">All Content Copyright @DateTime.UtcNow.Year</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <link rel="stylesheet" href="~/css/all.css" asp-append-version="true" lazyload="1" />
     <script src="~/js/all.js" asp-append-version="true" async></script>

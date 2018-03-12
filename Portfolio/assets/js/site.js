@@ -1,6 +1,10 @@
 ﻿(function () {
     "use strict";
 
+    $('#Logo').click(function () {
+        window.location.replace("/");
+    });
+
     $('.WorkImg').hover(function () {
         $('.ImgOverlay').fadeIn();
     });
@@ -21,4 +25,4 @@
         $siblings.removeClass('active');
         $this.addClass('active');
     });
-})();   
+})();

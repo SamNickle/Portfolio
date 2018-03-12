@@ -1,0 +1,28 @@
+﻿@model Portfolio.Models.Contact
+
+<div class="Form Panel">
+    <h3>Lets Work Together</h3>
+    <div class="FormContainer">
+        <form asp-action="SendEmail" asp-controller="Contact" id="EmailForm">
+            @Html.AntiForgeryToken()
+            <div class="Details">
+                <div class="FormCol Col2">
+                    @Html.LabelFor(x => x.Name)
+                    @Html.TextBoxFor(x => x.Name, null, new { @class = "ContactName", required = "required", type = "text" })
+                </div>
+
+                <div class="FormCol Col2">
+                    @Html.LabelFor(x => x.Email)
+                    @Html.TextBoxFor(x => x.Email, null, new { @class = "ContactEmail", required = "required", type = "email" })
+                </div>
+            </div>
+
+            @Html.LabelFor(x => x.Message)
+            @Html.TextAreaFor(x => x.Message, new { @class = "TextArea", required = "required", name = "message" })
+
+            <div class="ContactSubmit">
+                <input id="SendEmail" type="submit" value="Send">
+            </div>
+        </form>
+    </div>
+</div>

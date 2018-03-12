@@ -43,8 +43,8 @@ time, mark, audio, video {
     font-size: 100%;
     vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
+
+HTML5 display-role reset for older browsers article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -126,6 +126,102 @@ table {
     margin: 0 auto;
     clear: both;
 }
+
+/***********************
+    Footer
+***********************/
+footer {
+    height: 150px;
+    background: url("/Images/Header/PortfolioBackground.jpg") center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    -webkit-transition: 500ms linear;
+    -moz-transition: 500ms linear;
+    -ms-transition: 500ms linear;
+    -o-transition: 500ms linear;
+    transition: 500ms linear;
+
+    .LinkContainer {
+        width: 500px;
+        padding: $Padding-Standard;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        .FooterLogoContainer {
+
+            a {
+                height: 50px;
+                width: 50px;
+            }
+
+            .FooterLogo {
+                height: 50px;
+                width: 50px;
+                background: url("./Images/Icons/Logo.svg");
+                opacity: 0.4;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .FooterText {
+            width: 80%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+            .FootLinksContainer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            a {
+                color: rgba(1, 1, 1,0.7);
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 14px;
+                text-decoration: none;
+
+                &:hover {
+                    color: black;
+                    opacity: 1;
+                    text-decoration: none;
+                }
+            }
+
+            .CopyRight {
+                margin: 20px 0 0 0px;
+                text-transform: uppercase;
+                font-size: 12px;
+                color: rgba(1,1,1,0.7)
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /***********************
     About Me
@@ -395,86 +491,105 @@ table {
 }
 
 .Form {
-    form {
-        text-align: left;
-        max-width: 50%;
-        margin: 0 auto;
-        padding: $Padding-Standard 0;
+    .FormContainer {
+        form {
+            text-align: left;
+            max-width: 50%;
+            margin: 0 auto;
+            padding: 0 0 $Padding-Standard 0;
 
-        .Details {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .FormCol {
+            .Details {
                 display: flex;
+                align-items: center;
                 justify-content: space-between;
-                /*align-items: left;*/
-                flex-direction: column;
-                padding: $Padding-Standard 0;
 
-                &.2 {
-                    width: 50%;
+                .FormCol {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    padding: $Padding-Standard 0;
+
+                    &.Col2 {
+                        width: 45%;
+                    }
+
+                    label {
+                        display: block;
+                    }
+
+                    input {
+                        height: 2em;
+                        padding: 15px;
+                        font-family: 'Raleway', sans-serif;
+                        box-sizing: border-box;
+                    }
                 }
-
-                label {
-                    display: block;
-                }
-
-                input {
-                    height: 2em;
-                    font-family: 'Raleway', sans-serif;
-
-                }
-            }
-        }
-
-        input {
-            width: 100%;
-            border: 3px solid #ca9061;
-
-            &:focus {
-                border: 3px solid #E1C184;
-                outline: none;
-            }
-        }
-
-        textarea {
-            border: 3px solid #ca9061;
-            -ms-overflow-style: none;
-            width: 100%;
-            height: 10em;
-            font-family: 'Raleway', sans-serif;
-
-            &:focus {
-                border: 3px solid #E1C184;
-                outline: none;
-            }
-        }
-    }
-
-    .ContactSubmit {
-        text-align: right;
-        margin-top: 3em;
-
-        input {
-            background-color: #ca9061;
-            color: white;
-            border: none;
-            text-transform: uppercase;
-            font-size: 18px;
-            width: 33%;
-            margin-right: -5px;
-            height: 2em;
-
-            &:focus {
-                border: none;
             }
 
-            &:hover {
-                background-color: #E1C184;
+            input {
+                width: 100%;
                 border: 3px solid #ca9061;
+
+                &:focus {
+                    border: 3px solid #E1C184;
+                    outline: none;
+                }
+            }
+
+            textarea {
+                border: 3px solid #ca9061;
+                -ms-overflow-style: none;
+                width: 100%;
+                height: 10em;
+                font-family: 'Raleway', sans-serif;
+                box-sizing: border-box;
+
+                &:focus {
+                    border: 3px solid #E1C184;
+                    outline: none;
+                }
             }
         }
+
+        .ContactSubmit {
+            text-align: right;
+            margin-top: 3em;
+
+            input {
+                background-color: #ca9061;
+                color: white;
+                border: none;
+                text-transform: uppercase;
+                font-size: 18px;
+                width: 33%;
+                margin-right: -5px;
+                height: 2em;
+
+                &:focus {
+                    border: none;
+                }
+
+                &:hover {
+                    background-color: #E1C184;
+                    border: 3px solid #ca9061;
+                }
+            }
+        }
+
+        .SuccessContainer {
+            text-align: center;
+        }
     }
+}
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-min-width: 768px) {
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
 }

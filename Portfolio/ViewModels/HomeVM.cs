@@ -11,5 +11,6 @@ namespace Portfolio.Models
         public List<Work> WorkExamples { get; set; }
         public List<Client> Clients { get; set; }
         public List<SocialMedia> SocialMedias { get; set; }
+        public Contact ContactForm { get; set; }
     }
 }

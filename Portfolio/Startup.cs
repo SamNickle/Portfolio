@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Net.Http.Headers;
 using Microsoft.AspNetCore;
 using WebMarkupMin.AspNetCore2;
+using Portfolio.Models;
 
 namespace Portfolio
 {
@@ -37,6 +38,7 @@ namespace Portfolio
         {
             services.AddResponseCaching();
             services.AddMvc();
+            services.Configure<SmtpConfig>(Configuration.GetSection("Smtp"));
 
             services.AddWebMarkupMin(options =>
             {
@@ -57,6 +59,7 @@ namespace Portfolio
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

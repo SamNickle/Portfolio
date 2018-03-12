@@ -25,8 +25,7 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline; }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
+HTML5 display-role reset for older browsers article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
@@ -84,6 +83,62 @@ table {
 .CenterBlock {
   margin: 0 auto;
   clear: both; }
+
+/***********************
+    Footer
+***********************/
+footer {
+  height: 150px;
+  background: url("/Images/Header/PortfolioBackground.jpg") center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  -webkit-transition: 500ms linear;
+  -moz-transition: 500ms linear;
+  -ms-transition: 500ms linear;
+  -o-transition: 500ms linear;
+  transition: 500ms linear; }
+  footer .LinkContainer {
+    width: 500px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    footer .LinkContainer .FooterLogoContainer a {
+      height: 50px;
+      width: 50px; }
+    footer .LinkContainer .FooterLogoContainer .FooterLogo {
+      height: 50px;
+      width: 50px;
+      background: url("Images/Icons/Logo.svg");
+      opacity: 0.4; }
+      footer .LinkContainer .FooterLogoContainer .FooterLogo:hover {
+        opacity: 1; }
+    footer .LinkContainer .FooterText {
+      width: 80%;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column; }
+      footer .LinkContainer .FooterText .FootLinksContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+      footer .LinkContainer .FooterText a {
+        color: rgba(1, 1, 1, 0.7);
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none; }
+        footer .LinkContainer .FooterText a:hover {
+          color: black;
+          opacity: 1;
+          text-decoration: none; }
+      footer .LinkContainer .FooterText .CopyRight {
+        margin: 20px 0 0 0px;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: rgba(1, 1, 1, 0.7); }
 
 /***********************
     About Me
@@ -284,48 +339,50 @@ table {
     .Contact .Email:hover {
       color: #E1C184; }
 
-.Form form {
+.Form .FormContainer form {
   text-align: left;
   max-width: 50%;
   margin: 0 auto;
-  padding: 30px 0; }
-  .Form form .Details {
+  padding: 0 0 30px 0; }
+  .Form .FormContainer form .Details {
     display: flex;
     align-items: center;
     justify-content: space-between; }
-    .Form form .Details .FormCol {
+    .Form .FormContainer form .Details .FormCol {
       display: flex;
       justify-content: space-between;
-      /*align-items: left;*/
       flex-direction: column;
       padding: 30px 0; }
-      .Form form .Details .FormCol.2 {
-        width: 50%; }
-      .Form form .Details .FormCol label {
+      .Form .FormContainer form .Details .FormCol.Col2 {
+        width: 45%; }
+      .Form .FormContainer form .Details .FormCol label {
         display: block; }
-      .Form form .Details .FormCol input {
+      .Form .FormContainer form .Details .FormCol input {
         height: 2em;
-        font-family: 'Raleway', sans-serif; }
-  .Form form input {
+        padding: 15px;
+        font-family: 'Raleway', sans-serif;
+        box-sizing: border-box; }
+  .Form .FormContainer form input {
     width: 100%;
     border: 3px solid #ca9061; }
-    .Form form input:focus {
+    .Form .FormContainer form input:focus {
       border: 3px solid #E1C184;
       outline: none; }
-  .Form form textarea {
+  .Form .FormContainer form textarea {
     border: 3px solid #ca9061;
     -ms-overflow-style: none;
     width: 100%;
     height: 10em;
-    font-family: 'Raleway', sans-serif; }
-    .Form form textarea:focus {
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box; }
+    .Form .FormContainer form textarea:focus {
       border: 3px solid #E1C184;
       outline: none; }
 
-.Form .ContactSubmit {
+.Form .FormContainer .ContactSubmit {
   text-align: right;
   margin-top: 3em; }
-  .Form .ContactSubmit input {
+  .Form .FormContainer .ContactSubmit input {
     background-color: #ca9061;
     color: white;
     border: none;
@@ -334,9 +391,12 @@ table {
     width: 33%;
     margin-right: -5px;
     height: 2em; }
-    .Form .ContactSubmit input:focus {
+    .Form .FormContainer .ContactSubmit input:focus {
       border: none; }
-    .Form .ContactSubmit input:hover {
+    .Form .FormContainer .ContactSubmit input:hover {
       background-color: #E1C184;
       border: 3px solid #ca9061; }
+
+.Form .FormContainer .SuccessContainer {
+  text-align: center; }
 

@@ -104,34 +104,21 @@
     </div>
 </div>
 
-<div class="Container White">
-    <div class="Form Panel">
-        <h3>Lets Work Together</h3>
-        <div class="FormContainer">
-            <form asp-action="EnquiryForm" asp-controller="Contact">
-                <div class="Details">
-                    <div class="FormCol">
-                        <label>Your Name</label>
-                        <input class="ContactName" required type="text" name="name">
-                    </div>
-
-                    <div class="FormCol">
-                        <label>Your Email</label>
-                        <input class="ContactEmail" required type="email" name="_replyto">
-                    </div>
-                </div>
-
-                <label>Tell me about your project</label>
-                <textarea class="TextArea" required name="message"></textarea>
-
-                <div class="ContactSubmit">
-                    <input type="submit" value="Send">
-                </div>
-            </form>
-        </div>
-    </div>
+<div class="Container White" id="EmailFormPartial">
+    @Html.Partial("_ContactForm", Model.ContactForm)
 </div>
 
 @section Scripts {
-    @*Insert any script tags for this page here*@
+    <script>
+        $("#SendEmail").click(function () {
+            $.ajax({
+                url: "Contact/SendEmail",
+                type: "post",
+                data: $("#EmailForm").serialize(),
+                success: function (result) {
+                    $("#EmailFormPartial").html(result);
+                }
+            });
+        }
+    </script>
 }

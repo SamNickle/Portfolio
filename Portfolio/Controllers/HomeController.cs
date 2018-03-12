@@ -54,6 +54,7 @@ namespace Portfolio.Controllers
                 new SocialMedia { Name = "Facebook", Url = "https://www.facebook.com/sam.nicholson.3114", ImageUrl = "Images/Contact/facebook.svg" },
                 new SocialMedia { Name = "Github", Url = "https://github.com/SamNickle", ImageUrl = "Images/Contact/github.svg" }
             };
+            vm.ContactForm = new Contact();
 
             return View(vm);
         }
