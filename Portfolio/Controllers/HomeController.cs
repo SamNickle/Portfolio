@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Models;
+using Portfolio.ViewModels;
 
 namespace Portfolio.Controllers
 {
@@ -17,6 +18,8 @@ namespace Portfolio.Controllers
         [ResponseCache(Duration = 3600)]
         public IActionResult Index()
         {
+            var foo = Request.Path.Value;
+
             //TODO Connect to db to get info
             var vm = new HomeVM();
             vm.Skills = new List<Skill>()

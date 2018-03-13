@@ -101,6 +101,11 @@ table {
         padding: $Padding-Standard 0;
     }
 
+    h4 {
+        color: $Primary-Colour;
+        font-size: 16px;
+    }
+
     a {
         color: $Primary-Colour;
         font-weight: 700;
@@ -286,6 +291,9 @@ footer {
     }
 }
 
+/***********************
+    Work
+***********************/
 .Work {
     .WorkContainer {
         max-width: $Width-Max;
@@ -347,6 +355,9 @@ footer {
     }
 }
 
+/***********************
+    Clients
+***********************/
 .Clients {
     margin: 0 auto;
 
@@ -430,6 +441,9 @@ footer {
     }
 }
 
+/***********************
+    Contact
+***********************/
 .Contact {
     margin: 0 auto;
 
@@ -478,6 +492,9 @@ footer {
     }
 }
 
+/***********************
+    Form
+***********************/
 .Form {
     .FormContainer {
         form {
@@ -569,6 +586,74 @@ footer {
         }
     }
 }
+
+/***********************
+    About/Work
+***********************/
+
+@keyframes slideTechnology {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        -webkit-transform: translateX(-40%);
+    }
+
+    100% {
+        -webkit-transform: translateX(0%);
+    }
+}
+
+.WorkExperienceContainer {
+    .WorkExperience {
+        padding: $Padding-Standard 0;
+        text-align: left;
+        font-family: $Font-OpenSans;
+
+        & * {
+            padding: 5px 0;
+        }
+    }
+
+    .TechnologySlideshow {
+        position: relative;
+        overflow: hidden;
+        height: 150px;
+        margin: 0 auto;
+        transform: translate3d(0,0,0);
+        max-width: 1170px;
+
+        .TechnologyImages {
+            display: flex;
+            position: absolute;
+            height: 150px;
+            top: 0;
+            left: 0;
+            height: 100%;
+            transform: translate3d(0, 0, 0);
+            animation: slideTechnology 20s linear infinite;
+
+            .TechnologyContainer {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0 10px;
+
+                > img {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                > p {
+                    padding: 5px 0 0 0;
+                }
+            }
+        }
+    }
+}
+
 
 // Large devices (desktops, 992px and up)
 @media (max-width: 992px) {

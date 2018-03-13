@@ -1,9 +1,33 @@
-﻿<div class="Container White">
-    <div class="Work Panel">
+﻿@model Portfolio.ViewModels.AboutWorkVM
+
+@{
+
+}
+
+<div class="Container White">
+    <div class="WorkExperienceContainer Panel">
         <h3>Work</h3>
 
-        <div class="WorkContainer CenterBlock">
-            <h4></h4>
+        @foreach (var item in Model.WorkExp)
+        {
+            <div class="WorkExperience CenterBlock">
+                <h4>@item.CompanyName - @item.Location</h4>
+                <p>@item.Position</p>
+                <p>@item.StartDate.ToShortDateString() - @(item.EndDate.HasValue ? item.EndDate.Value.Date.ToShortDateString() : "Present")</p>
+                <p>@Html.Raw(item.WorkDescription)</p>
+            </div>
+        }
+
+        <div class="TechnologySlideshow">
+            <div class="TechnologyImages">
+                @foreach (var item in Model.Technologies)
+                {
+                    <div class="TechnologyContainer">
+                        <img src="@item.ImageUrl" alt="@item.Name" />
+                        <p>@item.Name</p>
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </div>

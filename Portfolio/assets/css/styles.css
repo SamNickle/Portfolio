@@ -67,6 +67,9 @@ table {
     font-size: 18px;
     font-weight: 700;
     padding: 30px 0; }
+  .Container h4 {
+    color: #ca9061;
+    font-size: 16px; }
   .Container a {
     color: #ca9061;
     font-weight: 700;
@@ -197,6 +200,9 @@ footer {
           border-radius: 50%;
           margin: 2px; }
 
+/***********************
+    Work
+***********************/
 .Work .WorkContainer {
   max-width: 1170px;
   margin: 0 auto;
@@ -243,6 +249,9 @@ footer {
         -ms-transition: background-color 500ms linear;
         transition: background-color 500ms linear; }
 
+/***********************
+    Clients
+***********************/
 .Clients {
   margin: 0 auto; }
   .Clients .ClientCarousel {
@@ -307,6 +316,9 @@ footer {
         border-bottom: 4px solid #ca9061;
         opacity: 1; }
 
+/***********************
+    Contact
+***********************/
 .Contact {
   margin: 0 auto; }
   .Contact .IconWrapper {
@@ -346,6 +358,9 @@ footer {
     .Contact .Email:hover {
       color: #E1C184; }
 
+/***********************
+    Form
+***********************/
 .Form .FormContainer form {
   text-align: left;
   max-width: 50%;
@@ -406,6 +421,52 @@ footer {
 
 .Form .FormContainer .SuccessContainer {
   text-align: center; }
+
+/***********************
+    About/Work
+***********************/
+@keyframes slideTechnology {
+  0% {
+    left: 0; }
+  50% {
+    -webkit-transform: translateX(-40%); }
+  100% {
+    -webkit-transform: translateX(0%); } }
+
+.WorkExperienceContainer .WorkExperience {
+  padding: 30px 0;
+  text-align: left;
+  font-family: "Open Sans", sans-serif; }
+  .WorkExperienceContainer .WorkExperience * {
+    padding: 5px 0; }
+
+.WorkExperienceContainer .TechnologySlideshow {
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+  margin: 0 auto;
+  transform: translate3d(0, 0, 0);
+  max-width: 1170px; }
+  .WorkExperienceContainer .TechnologySlideshow .TechnologyImages {
+    display: flex;
+    position: absolute;
+    height: 150px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translate3d(0, 0, 0);
+    animation: slideTechnology 20s linear infinite; }
+    .WorkExperienceContainer .TechnologySlideshow .TechnologyImages .TechnologyContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10px; }
+      .WorkExperienceContainer .TechnologySlideshow .TechnologyImages .TechnologyContainer > img {
+        width: 100px;
+        height: 100px; }
+      .WorkExperienceContainer .TechnologySlideshow .TechnologyImages .TechnologyContainer > p {
+        padding: 5px 0 0 0; }
 
 @media (max-width: 992px) {
   .Header {
