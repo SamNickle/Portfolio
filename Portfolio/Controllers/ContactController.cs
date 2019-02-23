@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Portfolio.Models;
-using System.Net.Mail;
-using Microsoft.IdentityModel.Protocols;
-using Microsoft.Extensions.Options;
-
-namespace Portfolio.Controllers
+﻿namespace Portfolio.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Options;
+
+    using Portfolio.Models;
+
+    using System.Net.Mail;
+
     public class ContactController : Controller
     {
         private readonly SmtpConfig _myConfiguration;

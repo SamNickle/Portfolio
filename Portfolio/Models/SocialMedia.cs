@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Portfolio.Models
+﻿namespace Portfolio.Models
 {
     public class SocialMedia
     {
         public string Name { get; set; }
         public string Url { get; set; }
         public string ImageUrl { get; set; }
-
     }
 }

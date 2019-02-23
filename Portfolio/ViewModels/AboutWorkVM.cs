@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Portfolio.Models;
-
-namespace Portfolio.ViewModels
+﻿namespace Portfolio.ViewModels
 {
+    using System.Collections.Generic;
+    using Portfolio.Models;
+
     public class AboutWorkVM
     {
         public List<WorkExperience> WorkExp { get; set; }
